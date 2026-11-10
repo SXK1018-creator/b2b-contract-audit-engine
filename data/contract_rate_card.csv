@@ -1,0 +1,4 @@
+contract_id,supplier_name,tier_name,min_volume,max_volume,standard_unit_rate_gbp,admin_fee_pct
+CON-2026-X01,Vertex Business Solutions Ltd,Tier 1 (Base),0,5000,45.0,0.12
+CON-2026-X01,Vertex Business Solutions Ltd,Tier 2 (Mid-Volume),5001,15000,38.5,0.1
+CON-2026-X01,Vertex Business Solutions Ltd,Tier 3 (High-Volume),15001,99999999,32.0,0.08
