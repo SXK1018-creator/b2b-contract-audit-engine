@@ -18,21 +18,22 @@ By applying data analytics to transaction ledgers, the engine protects vendor go
 
 The solution models data inside an enterprise cloud data warehouse using a classic dimensional tracking architecture.
 
+```text
 ┌─────────────────────────────────┐           ┌─────────────────────────────────┐
 │    dim_contract_rate_cards      │           │    fact_supplier_invoice_lines  │
 ├─────────────────────────────────┤           ├─────────────────────────────────┤
 │ PK  contract_id (VARCHAR)       │1          │ PK  line_item_id (VARCHAR)      │
 │     supplier_name (VARCHAR)     │──┐        │     invoice_id (VARCHAR)        │
 │ PK  tier_name (VARCHAR)         │  │        │ FK  contract_id (VARCHAR)       │
-│     min_volume (INT)            │  └───────∞│     transaction_reference (VAR) │
+│     min_volume (INT)            │  └───────o│     transaction_reference (VAR) │
 │     max_volume (INT)            │           │     order_date (DATE)           │
 │     standard_unit_rate_gbp (NUM)│           │     service_tier (VARCHAR)      │
 │     admin_fee_pct (NUM)         │           │     volume_units (INT)          │
 └─────────────────────────────────┘           │     unit_rate_billed_gbp (NUM)  │
-│     admin_fee_billed_pct (NUM)  │
-│     total_billed_amount_gbp(NUM)│
-└─────────────────────────────────┘
-
+                                              │     admin_fee_billed_pct (NUM)  │
+                                              │     total_billed_amount_gbp(NUM)│
+                                              └─────────────────────────────────┘
+```
 
 ### Risk Detection Logic Matrix
 
